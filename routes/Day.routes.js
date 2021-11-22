@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Day = require("../models/Day.model");
+// const Day = require("../models/Day.model");
 const Event = require("../models/Event.model");
 
 // llega a la página con el vaso
@@ -21,3 +21,5 @@ router.post("/create-event", (req, res) => {
       .catch(err => console.log(err))
   
 });
+
+module.exports = router;
