@@ -1,6 +1,5 @@
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
-require("./config/session.config")(app)  //session config
 require("dotenv/config");
 
 // ℹ️ Connects to the database
@@ -18,6 +17,7 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
+require("./config/session.config")(app)  //session config
 
 // default value for title local
 const projectName = "glass-half-full";
