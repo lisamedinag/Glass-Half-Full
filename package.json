@@ -14,11 +14,24 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "hbs": "^4.2.0",
+    "mongod": "^2.0.0",
     "mongoose": "^6.0.13",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisamedinag/Glass-Half-Full.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lisamedinag/Glass-Half-Full/issues"
+  },
+  "homepage": "https://github.com/lisamedinag/Glass-Half-Full#readme",
+  "description": ""
 }
