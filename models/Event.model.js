@@ -9,21 +9,21 @@ const eventSchema = new Schema(
       enum: ['Work', 'Study', 'Sport', 'Self-care', 'Social', 'Relax', 'Sleep'],
     },
 
-
     //evento referencia al Day al que pertenece 
     date: { type: mongoose.SchemaTypes.ObjectId, ref: "Day" },
 
-  
     name: String,
 
     duration: {
       type: Number,
-      enum: ['15', '30', '45', '60', '75', '60', '75', '90', '105','120']
+      enum: ['15', '30', '45', '60', '75', '60', '75', '90', '105', '120']
     },
+
+    description: String,
 
     //startTime: date.now   --  Same as timestamp  createdAt??
 
-    owner: { type: mongoose.SchemaTypes.ObjectId, ref: "User" }
+    isOwner: { type: mongoose.SchemaTypes.ObjectId, ref: "User" }
 
   },
   { timestamps: true } //automatically manages createdAt and updatedAt
