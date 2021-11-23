@@ -12,7 +12,7 @@ const daySchema = new Schema(
       default: Date.now
     },
 
-    quote: { type: mongoose.SchemaTypes.ObjectId, ref: "Quote" }
+    quote: Object
 
   },
   { timestamps: true }

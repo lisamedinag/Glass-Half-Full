@@ -1,43 +1,56 @@
 const router = require("express").Router();
 const { isLoggedIn, checkRoles } = require("../middlewares")
 const User = require("../models/User.model")
+const { isAdmin } = require("../utils")
 
 
 // User profile page
-router.get("/profile/:user_id", isLoggedIn, (req, res, next) => {
-    const user_id = req.params._id
+router.get("/:user_id", isLoggedIn, checkRoles('USER', 'MOD', 'ADMIN'), (req, res, next) => {
+    const { user_id } = req.params
 
     User.findById(user_id)
-        .then(user => res.render("user/profile", req.session.currentUser, user))
-        .catch(err => console.err(err))
+        .then(user => res.render("user/profile", {
+            //To be able to check who is logged, if the logged user is the owner or if its the Admin
+            // loggedUser: req.session.currentUser,
+            isOwn: user_id == req.session.currentUser._id,
+            user,
+            isAdmin: isAdmin(req.session.currentUser),
+        }))
+        .catch(err => console.error(err))
 });
 
 //Edit user details
-router.get("/profile/edit/:user_id", isLoggedIn, checkRoles("ADMIN", "MOD"), (req, res, next) => {
-    const user_id = req.params._id
+router.get("/edit/:user_id", isLoggedIn, checkRoles('USER', 'MOD', 'ADMIN'), (req, res, next) => {
+    const { user_id } = req.params
 
     User.findById(user_id)
-        .then(user => res.render("user/profile", req.session.currentUser, user))
+        .then(user => res.render("user/profile-edit", {
+            //Admins are able to delete users and asign roles so we need to check it
+            loggedUser: req.session.currentUser,
+            user,
+            isAdmin: isAdmin(req.session.currentUser),
+        }))
         .catch(err => console.err(err))
-    res.render("user/profile-edit", req.session.currentUser)
 });
 
 
 //Get changes
-router.post("/profile/edit/:user_id", isLoggedIn, checkRoles("ADMIN", "MOD"), (req, res, next) => {
-    const user_id = req.params._id
-    const { email, name, description, role } = req.body
+router.post("/edit/:user_id", isLoggedIn, checkRoles('USER', 'MOD', 'ADMIN'), (req, res, next) => {
+    const { user_id } = req.params
+    const { email, name, description, username, role } = req.body
 
-    User.findByIdAndUpdate(user_id, { email, name, description, role }, { new: true })
-      .then(user => res.redirect(`/user/profile/${user._id}`))
-      .catch(err => console.log(err))
+    User.findByIdAndUpdate(user_id, { email, name, description, username, role }, { new: true })
+        .then(user => res.redirect(`/profile/${user._id}`))
+        .catch(err => console.log(err))
 });
 
-//Delete
-router.get("/profile/delete/:user_id", checkRoles("ADMIN"), (req, res) => {
-    const user_id = req.params._id
 
-    User.findByIdAndDelete(id)
+
+//Delete
+router.get("/delete/:user_id", checkRoles('USER', 'MOD', 'ADMIN'), (req, res) => {
+    const { user_id } = req.params
+
+    User.findByIdAndDelete(user_id)
         .then(() => res.redirect("/"))
         .catch(err => console.log(err))
 

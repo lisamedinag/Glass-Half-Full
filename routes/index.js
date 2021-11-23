@@ -10,5 +10,8 @@ module.exports = app => {
   app.use('/calendar', require("./Day.routes"))
 
    // User routes 
-   app.use('/user', require("./user.routes"))
+   app.use('/profile', require("./user.routes"))
+
+   // Week routes 
+   app.use('/calendar', require("./Week.routes"))
 } 

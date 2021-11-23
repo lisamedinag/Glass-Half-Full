@@ -5,6 +5,6 @@ module.exports = {
 
 
     checkRoles: (...roles) => (req, res, next) => {
-        roles.includes(req.session.currentUser.role) ? next() : res.status(401).render("auth/login-page", { errorMessage: "No tienes los permisos adecuados" })
+        roles.includes(req.session.currentUser.role) ? next() : res.status(401).render("auth/login", { errorMessage: "No tienes los permisos adecuados" })
     }
 }
