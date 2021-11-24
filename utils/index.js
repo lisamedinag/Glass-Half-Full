@@ -15,18 +15,8 @@ module.exports = {
     return [year, month, day].join('-')
   },
 
-  //  arrayOfSameEvents : (allEvents, day_id) => {
-  //   let sameDayEvents = []
-  //   for (let i = 0; i < allEvents.length; i++) {
-  //     if (allEvents[i].date === day_id) {
-  //       sameDayEvents.push(events[i]) 
-  //     }
-  //     return sameDayEvents
-  //   }
-  // },
-
   isAdmin: (user) => user.role === "ADMIN",
   isMod: (user) => user.role === "MOD",
-  isOwner: (user) => user.isOwner?.equals(user._id),
+  isOwner: (event, user) => event.isOwner?.equals(user._id)
 }
 
