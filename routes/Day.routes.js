@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { capitalizeText, checkMongoID, isOwner, isAdmin, arrayOfSameEvents } = require("../utils");
+const { capitalizeText, checkMongoID, isOwner, isAdmin } = require("../utils");
 const { isLoggedIn, checkRoles } = require("../middlewares")
 
 const Day = require("../models/Day.model");
@@ -11,11 +11,11 @@ const User = require("../models/User.model")
 // Single day view
 router.get("/day/:day_id", (req, res, next) => {
     const { day_id } = req.params
-    console.log("Hellooooo")
-    Event.find({ date: day_id })
+    console.log(day_id, req.session.currentUser);
+
+    Event.find({ date: day_id, isOwner: req.session.currentUser._id })
         .then(allEvents => {
-            console.log(allEvents)
-            //arrayOfSameEvents: (allEvents, day_id),
+            console.log(allEvents);
             res.render("calendar/day", { events: allEvents, day_id })
         })
         .catch(err => console.log(err))
@@ -25,7 +25,7 @@ router.get("/day/:day_id", (req, res, next) => {
 router.get("/new-event/:day_id", (req, res) => {
     const { day_id } = req.params
     res.render("calendar/new-event", { day_id })
-        //.catch(err => console.log(err))
+    //.catch(err => console.log(err))
 });
 
 // Send info of new event
@@ -33,7 +33,7 @@ router.post("/new-event/:date", isLoggedIn, (req, res) => {
     const { category, name, duration, description } = req.body;
     const { date } = req.params
 
-    Event.create({ category, date, name, duration, description, isOwner: req.session.currentUser.id })
+    Event.create({ category, date, name, duration, description, isOwner: req.session.currentUser._id })
         .then(() => res.redirect(`/calendar/day/${date}`))
         .catch(err => console.log(err))
 });
