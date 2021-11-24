@@ -4,18 +4,30 @@ const Schema = mongoose.Schema;
 
 const eventSchema = new Schema(
   {
-    category : {
+    category: {
       type: String,
       enum: ['Work', 'Study', 'Sport', 'Self-care', 'Social', 'Relax', 'Sleep'],
-      // TODO relate a type of category to a color (possibly just front end?)
     },
-    
+
+    //evento referencia al Day al que pertenece 
+    date: { type: mongoose.SchemaTypes.ObjectId, ref: "Day" },
+
     name: String,
-    startTime: Number,
-    endTime: Number,
-    owner: { type: mongoose.SchemaTypes.ObjectId, ref: "User" }
+
+    duration: {
+      type: Number,
+      enum: ['15', '30', '45', '60', '75', '60', '75', '90', '105', '120']
+    },
+
+    description: String,
+
+    //startTime: date.now   --  Same as timestamp  createdAt??
+
+    isOwner: { type: mongoose.SchemaTypes.ObjectId, ref: "User" }
+
   },
-  { timestamps: true }
+  { timestamps: true } //automatically manages createdAt and updatedAt
 );
+
 
 module.exports = model("Event", eventSchema);

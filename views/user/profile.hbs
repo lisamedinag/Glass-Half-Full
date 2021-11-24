@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>{{user.name}}'s profile</h1>
+            <h3>Welcome {{user.name}}</h3>
+            <p>{{user.description}}</p>
+            <p>{{user.username}}</p>
+
+            {{#if isOwn}}
+            <a href="edit/{{user._id}}">Edit</a>
+            {{/if}}
+
+            {{#if isAdmin}}
+            <a href="edit/{{user._id}}">Edit</a>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>Welcome {{loggedUser.name}}</h1>
+
+<form action="/profile/edit/{{user._id}}" method="POST">
+
+    <label for="">
+        Name: <input name="name" value="{{user.name}}" type="text">
+    </label>
+    </br>
+
+    <label for="">
+        Username: <input name="username" value="{{user.username}}" type="text">
+    </label>
+    </br>
+
+    <label for="">
+        Description: <input name="description" value="{{user.description}}" type="text">
+    </label>
+    </br>
+
+    {{#if isAdmin}}
+    <label for="">
+        Role: <input name="role" value="{{user.role}}" type="text">
+    </label>
+    {{/if}}
+
+    <button type="submit">Save</button>
+</form>
+
+{{#if isAdmin}}
+<div>
+    <div class="col-12">
+        <br>
+        <a href="profile/delete/{{user._id}}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+{{/if}}
