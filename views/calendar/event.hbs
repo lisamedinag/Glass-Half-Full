@@ -1,16 +1,30 @@
 <h1>Im an event look at me</h1>
-<div class="event-box">
-    <div>
-        <h3>{{name}}</h3>
-        <p>Category: {{category}}</p>
-        <p>Duration: {{duration}}</p>
-        <p>Description: {{description}}</p>
+<div class="container align-items-center">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-6">
+            <div class="text-left">
+                <h3>{{name}}</h3>
+                <p>Category: {{category}}</p>
+                <p>Duration: {{duration}}</p>
+                <p>Description: {{description}}</p>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div></div>
+    <div class="row text-center align-text-bottom" style="height: 80vh;">
+        <div class="col-4"></div>
+        <div class="col-12">
+
+            <a href="/calendar/edit-event/{{_id}}">Edit event</a>
+        </div>
     </div>
 </div>
-<a href="/calendar/edit-event/{{_id}}">Edit event</a>
+
 
 {{!-- <div class="container h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">
-      <h1 class="display-3">Hello, world!</h1>
+        <h1 class="display-3">Hello, world!</h1>
     </div>
 </div> --}}
