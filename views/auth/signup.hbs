@@ -1,23 +1,31 @@
-<div id="form">
-  <h2>Signup</h2>
+<div class="container">
+  <div class="row">
+    <div id="form" class="text-center">
+      <h2>Signup</h2>
 
-  <form action="/signup" method="POST">
-    <label> Username
-      <input type="text" name="username" placeholder="example@example.com" />
-    </label>
+      <form action="/signup" method="POST">
 
-    <label> Email
-      <input type="email" name="email" placeholder="example@example.com" />
-    </label>
+        <label>
+          <input type="text" name="username" placeholder="Username" class="col-sm-12" />
+        </label>
 
-    <label>Password
-      <input type="password" name="password" placeholder="********" />
-    </label>
+        <label>
+          <input type="email" name="email" placeholder="example@example.com" class="col-sm-12" />
+        </label>
 
-    <button type="submit">Signup</button>
+        <label>
+          <input type="password" name="password" placeholder="********" class="col-sm-12" />
+        </label>
 
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+        <div>
+          <button type="submit" class="btn btn-outline-dark bg-dark btn-floating m-1 text-light">Signup</button>
+        </div>
+
+
+        {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+    </div>
+  </div>
 </div>

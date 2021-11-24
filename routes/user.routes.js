@@ -34,7 +34,7 @@ router.get("/edit/:user_id", isLoggedIn, checkRoles('USER', 'MOD', 'ADMIN'), (re
 });
 
 
-//Get changes
+//Save changes on user details
 router.post("/edit/:user_id", isLoggedIn, checkRoles('USER', 'MOD', 'ADMIN'), (req, res, next) => {
     const { user_id } = req.params
     const { email, name, description, username, role } = req.body

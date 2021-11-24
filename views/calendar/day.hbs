@@ -1,5 +1,11 @@
 <h1>Hola soy un Vasito</h1>
 
+<div>
+    <h3>All my events:</h3>
+    {{#each events}}
+    <a href="/calendar/event/{{_id}}">{{this.name}}</a>
+    {{/each}}
+</div>
 
 
-<a href="/calendar/new-event">+</a>
+<a href="/calendar/new-event/{{day_id}}">+</a>
