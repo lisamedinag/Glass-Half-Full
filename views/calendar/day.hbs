@@ -8,14 +8,34 @@
 
         <div class="col-12  d-flex card text-center ">
             <div>
-                <h1>{{quote.q}}</h1>
+                <blockquote>{{quote.q}}</blockquote>
             </div>
         </div>
 
+        {{!-- <div class="row "> --}}
+            {{!-- TODO set height of this col to same height as image (when retouched) --}}
+            <div class="col-12 col-md-6 d-flex card text-center card-img-top">
 
-        <div class="col-12 col-md-6 d-flex card text-center ">
-            <div class="card-img-top"><img src="/images/day-glass.png"></div>
-        </div>
+                <div class="work eventbars" style="background-color:red"></div>
+
+                <div class="study eventbars" style="background-color:blue"></div>
+
+                <div class="sport eventbars" style="background-color:orange"></div>
+
+                <div class="self-care eventbars" style="background-color:black"></div>
+
+                <div class="social eventbars" style="background-color:purple"></div>
+
+                <div class="relax eventbars" style="background-color:green"></div>
+
+            </div>
+
+            <div class="col-12 col-md-6 card-img-top">
+                <a href="/calendar/all-events"><img src="/images/day-glass.png"></a>
+            </div>
+            {{!--
+        </div> --}}
+
 
 
         <div class="col-12 col-md-6 d-flex card text-center ">

@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ul>
+                {{#each events}}
+                <li><a href="/calendar/event/{{_id}}">{{this.name}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -59,7 +59,13 @@ h1 {
 }
 
 .card-img-top img{
-  width: 100%;
+  /* width: 50%; */
+    float: center;
+    overflow: visible;
+    position: relative;
+    z-index: 1000;
+    width: 50%;
+    
 }
 
 .week{
@@ -82,4 +88,8 @@ h1 {
 .edit-event {
   height: 60vh;
   padding-top: 100px;
+}
+
+.eventbars {
+  width: 50%;
 }
