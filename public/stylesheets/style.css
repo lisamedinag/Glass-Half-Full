@@ -58,26 +58,17 @@ h1 {
   width: 10%;
 }
 
-.card-img-top img{
-  /* width: 50%; */
-    float: center;
-    overflow: visible;
-    position: relative;
-    z-index: 1000;
-    width: 50%;
-    
+.card-img-top {
+  height: 280px;  
+  margin-top: 50%;  
 }
 
 .week{
-  height: 80vh;
+  height: 70vh;
 }
 
 .card {
   border: none;
-}
-
-.week .card div{
-  padding-top: 5%;
 }
 
 .event {
@@ -90,6 +81,7 @@ h1 {
   padding-top: 100px;
 }
 
-.eventbars {
+.event-bars {
+  height: 280px;
   width: 50%;
 }

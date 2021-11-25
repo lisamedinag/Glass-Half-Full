@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
             document.querySelector(".relax").style.height = `${(allEventsDuration[5]*100)/1440}%`
 
             
-            console.log('hola duration', allEventsDuration[0])
+            console.log('hola duration', allEventsDuration)
 
         })
         .catch(err => console.log(err))

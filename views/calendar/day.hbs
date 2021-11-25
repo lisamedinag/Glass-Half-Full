@@ -1,5 +1,5 @@
 <div class="container week">
-    <div class="row align-items-center pt-2">
+    <div class="row align-items-center">
         <div class="col-12  d-flex card text-center ">
             <div>
                 <h1>Week 51</h1>
@@ -12,9 +12,8 @@
             </div>
         </div>
 
-        {{!-- <div class="row "> --}}
-            {{!-- TODO set height of this col to same height as image (when retouched) --}}
-            <div class="col-12 col-md-6 d-flex card text-center card-img-top">
+        <div>
+            <div class="col-12 card d-flex text-center event-bars">
 
                 <div class="work eventbars" style="background-color:red"></div>
 
@@ -30,24 +29,24 @@
 
             </div>
 
-            <div class="col-12 col-md-6 card-img-top">
-                <a href="/calendar/all-events"><img src="/images/day-glass.png"></a>
+            <div class="col-12 card-img-top justify-content-center">
+                <a href="/calendar/all-events"><img src="/images/day-glass.png" height="100%"></a>
             </div>
-            {{!--
-        </div> --}}
+        </div>
+            
 
 
 
-        <div class="col-12 col-md-6 d-flex card text-center ">
+        {{!-- <div class="col-12 col-md-6 d-flex card text-center ">
             <div class="card-list">
                 <h3>All my events:</h3>
                 {{#each events}}
                 <a href="/calendar/event/{{_id}}">{{this.name}}</a>
                 {{/each}}
             </div>
-        </div>
+        </div> --}}
 
-        <div class="col-12 d-flex justify-content-center ">
+        <div class="col-12 d-flex justify-content-center add-event-button">
             <a href="/calendar/new-event/{{day_id}}" class="btn btn-outline-dark bg-dark btn-floating m-1 text-light"
                 style="font-size: 60px; width: 100px">+</a>
         </div>
