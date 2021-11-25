@@ -14,4 +14,6 @@ module.exports = app => {
 
    // Week routes 
    app.use('/calendar', require("./Week.routes"))
+
+   app.use('/api', require("./api.routes"))
 } 
