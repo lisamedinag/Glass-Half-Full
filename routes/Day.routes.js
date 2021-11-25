@@ -10,6 +10,18 @@ const User = require("../models/User.model")
 
 
 
+// All events
+router.get("/:day_id/all-events", (req, res) => {
+    const { day_id } = req.params
+
+    Event.find({ date: day_id, isOwner: req.session.currentUser._id })
+        .then(allEvents => {
+
+            res.render("calendar/all-events", { events: allEvents, day_id })
+        })
+        .catch(err => console.log(err))
+});
+
 // Single day view
 router.get("/day/:day_id", (req, res, next) => {
     const { day_id } = req.params
@@ -31,23 +43,14 @@ router.get("/day/:day_id", (req, res, next) => {
 });
 
 
-//Events by category
-router.get("/calendar/all-events", (req, res) => {
-    const {category} = req.params
-
-    Event.find({ date: day_id, isOwner: req.session.currentUser._id })
-    .then(events => res.render("calendar/all-events", events)) 
-    .catch(err => console.log(err))
-});
-
 // View single event
 router.get("/event/:event_id", (req, res) => {
     const { event_id } = req.params
-    
+
     Event.findById(event_id)
-    .then(event => res.render("calendar/event", event))
-    .catch(err => console.log(err))
-    
+        .then(event => res.render("calendar/event", event))
+        .catch(err => console.log(err))
+
 });
 
 // Create new event 
@@ -63,8 +66,8 @@ router.post("/new-event/:date", isLoggedIn, (req, res) => {
     const { date } = req.params
 
     Event
-    // .find(date)
-    //if duration de todos eventos + req body duration saltar error (te quedan x minutos/o duracion maximo)
+        // .find(date)
+        //if duration de todos eventos + req body duration saltar error (te quedan x minutos/o duracion maximo)
         .create({ category, date, name, duration, description, isOwner: req.session.currentUser._id })
         .then(() => res.redirect(`/calendar/day/${date}`))
         .catch(err => console.log(err))
@@ -91,6 +94,7 @@ router.post("/edit-event/:event_id", (req, res) => {
 
 });
 
+///???
 router.post("/new-event/:date", isLoggedIn, (req, res) => {
     const { category, name, duration, description } = req.body;
     const { date } = req.params
