@@ -6,7 +6,7 @@ const eventSchema = new Schema(
   {
     category: {
       type: String,
-      enum: ['Work', 'Study', 'Sport', 'Self-care', 'Social', 'Relax', 'Sleep'],
+      enum: ['Work', 'Study', 'Sport', 'Self-care', 'Social', 'Relax'],
     },
 
     //evento referencia al Day al que pertenece 

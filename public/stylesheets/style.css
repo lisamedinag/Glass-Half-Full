@@ -1,9 +1,10 @@
-body {
-  height: 100vh;
+main {
+  height: 90vh;
   margin: 0, auto;
   font-family: 'EB Garamond', serif;
   font-family: 'Montserrat', sans-serif;
 }
+
 
 a {
   color: #00b7ff;
@@ -51,4 +52,33 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.week-glass  {
+  width: 10%;
+}
+
+.card-img-top img{
+  width: 100%;
+}
+
+.week{
+  height: 80vh;
+}
+
+.card {
+  border: none;
+}
+
+.week .card div{
+  padding-top: 5%;
+}
+
+.event {
+  height: 60vh;
+  padding-top: 150px;
+}
+
+.edit-event {
+  height: 60vh;
 }

@@ -1,11 +1,15 @@
 <div class="splash-image">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a href="/calendar/week" class="d-flex justify-content-center align-items-center center-logo">
+          <img src="./images/splash-logo.png">
+        </a>
 
-  <a href="/calendar/week" class="d-flex justify-content-center align-items-center center-logo">
-    <img src="./images/splash-logo.png">
-  </a>
-
-  <a class="splash-user" href="profile/{{_id}}">{{username}} hola</a>
-
+      </div>
+    </div>
+  </div>
+  <a class="splash-user" href="profile/{{_id}}">{{name}}</a>
 </div>
 
 
@@ -17,11 +21,11 @@
     <section class="">
       <!--Login button -->
       <a class="btn btn-outline-dark btn-floating m-1" href="/login#!" role="button">
-          Log In
+        Log In
       </a>
 
       <!-- Sigup button -->
       <a class="btn btn-outline-dark bg-dark btn-floating m-1 text-light" href="/signup" role="button">
-          Sign Up
+        Sign Up
       </a>
     </section>
