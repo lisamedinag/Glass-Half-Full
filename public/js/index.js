@@ -1,10 +1,10 @@
-const charactersAPI = new APIHandler('https://minions-api.herokuapp.com/');
+const dayGlassAPI = new APIHandler('http://localhost:3000');
 
 window.addEventListener('load', () => {
 
     const dayEvents = document.getElementById("day-id").value;
 
-    charactersAPI.getEvents(dayEvents)
+    dayGlassAPI.getEvents(dayEvents)
           .then(res => {
 
               console.log('hola mundo', res)
