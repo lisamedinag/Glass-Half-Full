@@ -1,13 +1,16 @@
 <h1>Im an event look at me</h1>
 <div class="event-box">
-    <div>
+    <div class="col">
         <h3>{{name}}</h3>
+        <hr>
         <p>Category: {{category}}</p>
         <p>Duration: {{duration}}</p>
-        <p>Description: {{description}}</p>
+        <p>"{{description}}"</p>
     </div>
+    <a class="btn btn-outline-dark btn-floating edit-button" href="/calendar/edit-event/{{_id}}">Edit</a>
 </div>
-<a href="/calendar/edit-event/{{_id}}">Edit event</a>
+
+
 
 {{!-- <div class="container h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">

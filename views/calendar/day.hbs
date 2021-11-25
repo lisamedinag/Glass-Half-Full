@@ -1,12 +1,21 @@
-<h1>Hola soy un Vasito</h1>
+<div><h2>Hola soy un Vasito</h2></div>
 
+<div class="daydiv container">
+    <div class="row d-flex align-items-center col-12">
+        <div>
+            <img src="/images/glass.png">
+        </div>
+    </div>
 
-<div>
-    <h3>All my events:</h3>
-    {{#each events}}
-    <a href="/calendar/event/{{_id}}">{{this.name}}</a>
-    {{/each}}
+    <div class="row">
+        <h3>All my events:</h3>
+        {{#each events}}
+            <a href="/calendar/event/{{_id}}">{{this.name}}</a>
+        {{/each}}
+    </div>
+    <div class="row">
+        <a href="/calendar/new-event/{{day_id}}">
+            <img src="/images/plus-button.png">
+        </a>
+    </div>
 </div>
-
-
-<a href="/calendar/new-event/{{day_id}}">+</a>
