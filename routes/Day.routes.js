@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const axios = require('axios').default;
 
 const { capitalizeText, checkMongoID, isOwner, isAdmin } = require("../utils");
 const { isLoggedIn, checkRoles } = require("../middlewares")
@@ -13,10 +14,19 @@ router.get("/day/:day_id", (req, res, next) => {
     const { day_id } = req.params
     console.log(day_id, req.session.currentUser);
 
-    Event.find({ date: day_id, isOwner: req.session.currentUser._id })
-        .then(allEvents => {
-            console.log(allEvents);
-            res.render("calendar/day", { events: allEvents, day_id })
+
+
+    axios.get(`https://zenquotes.io/api/random`)
+        .then(quote => {
+            Day.findOneAndUpdate({ _id: day_id, quote: null }, { quote: quote.data[0] })
+                .then(foundDay => {
+                    Event.find({ date: day_id, isOwner: req.session.currentUser._id })
+                        .then(allEvents => {
+                            console.log(foundDay);
+                            foundDay ? (quote=foundDay.quote) : (quote= quote.data[0])
+                            res.render("calendar/day", { events: allEvents, day_id, quote})
+                        })
+                })
         })
         .catch(err => console.log(err))
 });
