@@ -1,12 +1,15 @@
 <div class="splash-image">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a href="/calendar/week" class="d-flex justify-content-center align-items-center center-logo">
+          <img src="./images/splash-logo.png">
+        </a>
 
-  <a href="/calendar/week" class="d-flex justify-content-center align-items-center center-logo">
-    <img src="./images/splash-logo.png">
-  </a>
-
-{{!-- TODO mostrar un Hello, cuando estás logged-in --}}
+      </div>
+    </div>
+  </div>
   <a class="splash-user" href="profile/{{_id}}">{{name}}</a>
-
 </div>
 
 
@@ -15,14 +18,14 @@
   <!-- Grid container -->
   <div class="container p-4">
 
-    <section>
+    <section class="">
       <!--Login button -->
-      <a class="btn btn-outline-dark btn-floating m-1" href="/login" role="button">
-          Log In
+      <a class="btn btn-outline-dark btn-floating m-1" href="/login#!" role="button">
+        Log In
       </a>
 
       <!-- Sigup button -->
       <a class="btn btn-outline-dark bg-dark btn-floating m-1 text-light" href="/signup" role="button">
-          Sign Up
+        Sign Up
       </a>
     </section>

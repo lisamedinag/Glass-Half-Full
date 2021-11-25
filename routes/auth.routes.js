@@ -49,12 +49,10 @@ router.post('/login', (req, res) => {
     //     res.render('auth/login', { errorMsg: 'Please fill in all your details' })
     //     return
     // }
-
     // Check if user exists
     User
         .findOne({ email })
         .then(user => {
-
             // If user doesn't exist return an error
             if (!user) {
                 res.render('auth/login', { errorMsg: 'Invalid user' })

@@ -1,19 +1,28 @@
-<h1>Edit your event here boo</h1>
+<div class="container align-items-center edit-event">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <div class="text-left">
+        <form action="/calendar/edit-event/{{_id}}" method="POST">
+          <label for="title" class="col-12">Category <br>
+            <input name="category" value="{{category}}" id="title" type="text">
+          </label>
+          </br><br>
 
-<form action="/calendar/edit-event/{{_id}}" method="POST">
-  <label for="title">
-    Category <input name="category" value="{{category}}" id="title" type="text">
-  </label>
-  </br>
+          <label for="" class="col-12">Name of Event <br>
+            <input name="name" value="{{name}}" type="text">
+          </label>
+          </br><br>
 
-  <label for="">
-    Name of Event <input name="name" value="{{name}}" type="text">
-  </label>
-  </br>
+          <label for="" class="col-12"> Description <br>
+            <textarea name="description" rows="5" cols="22" value="{{description}}">Write something here</textarea>
+          </label>
+          <br><br>
 
-  <label for="">
-    Description <input name="description" value="{{description}}" type="text">
-  </label> 
+          <div class="col-12 d-flex justify-content-center ">
+            <button type="submit" class="btn btn-outline-dark btn-floating m-1" class="col-12">Save</button>
+          </div>
+        </form>
 
-  <button type="submit">Save</button>
-</form>
+      </div>
+    </div>
+  </div>

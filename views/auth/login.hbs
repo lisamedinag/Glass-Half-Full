@@ -1,20 +1,27 @@
-<div id="form">
-  <h2>Login</h2>
+<div class="container  align-items-center edit-event">
+  <div class="row align-items-center" style="">
+    <div id="form" class="id-form-div col-12 d-flex justify-content-center align-items-center">
+      <div class="text-left">
+        <form action="/login" method="POST" class="text-center align-items">
+          <h1>Login</h1>
 
-  <form action="/login" method="POST">
+          <label class="id-forms col-12">
+            <input type="email" name="email" placeholder="example@example.com" />
+          </label>
 
-    <label> Email
-      <input type="email" name="email" placeholder="example@example.com" />
-    </label>
+          <label class="id-forms col-12">
+            <input type="password" name="password" placeholder="********" />
+          </label>
 
-    <label>Password
-      <input type="password" name="password" placeholder="********" />
-    </label>
+          <div class="col-12 id-forms">
+            <button type="submit" class="btn btn-outline-dark bg-dark btn-floating m-1 text-light">Login</button>
+          </div>
 
-    <button type="submit">Login</button>
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+          {{#if errorMessage}}
+          <p class="error">{{errorMessage}}</p>
+          {{/if}}
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
