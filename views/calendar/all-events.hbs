@@ -1,13 +1,19 @@
-<div class="container  edit-event">
+<div class="container  align-items-center event">
     <div class="row  ">
-            <div class="col-6 d-flex justify-content-center align-items-center">
-                All my events:
-                <ol>
-                    {{#each events}}
-                    <li><a href="/calendar/event/{{_id}}">{{name}}</a></li>
-                    {{/each}}
-                </ol>
-            </div>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="text-left">
+                <h1>All my events:</h1>
+                <hr>
 
+                <div class="col-12 d-flex justify-content-center ">
+                    {{#each events}}
+                    <a href="/calendar/event/{{_id}}" class="btn btn-outline-dark btn-floating m-1">{{name}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+
