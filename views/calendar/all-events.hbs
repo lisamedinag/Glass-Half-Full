@@ -1,19 +1,23 @@
-<div class="container  align-items-center event">
+<div class="container  align-items-center event" style="padding-top: 100px;">
     <div class="row  ">
         <div class="col-12 d-flex justify-content-center align-items-center">
             <div class="text-left">
                 <h1>All my events:</h1>
                 <hr>
-
+                {{#each events}}
                 <div class="col-12 d-flex justify-content-center ">
-                    {{#each events}}
+
                     <a href="/calendar/event/{{_id}}" class="btn btn-outline-dark btn-floating m-1">{{name}}</a>
-                    {{/each}}
+
                 </div>
+                {{/each}}
             </div>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center" style="margin-top: 10px;">
+            <a href="/calendar/new-event/{{day_id}}"
+                class="add-event btn btn-outline-dark bg-dark btn-floating m-1 text-light"
+                style="font-size: 60px; width: 100px">+</a>
         </div>
     </div>
 </div>
-
-
-

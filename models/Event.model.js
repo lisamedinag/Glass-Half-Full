@@ -16,7 +16,7 @@ const eventSchema = new Schema(
 
     duration: {
       type: Number,
-      enum: [15, 30, 45, 60, 75, 60, 75, 90, 105, 120]
+      enum: [15, 30, 45, 60, 75, 90, 105, 120]
     },
 
     description: String,
