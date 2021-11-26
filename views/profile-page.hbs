@@ -1,6 +1,16 @@
-<div>
-    <h2>Welcome {{name}}</h2>
-    <h3>`Your email is: {{email}}`</h3>
-    <h3>`Description: {{Description}}`</h3>
+<div class="container align-items-center edit-event">
+    <div class="row">
+        {{!-- <div class="col-4"></div> --}}
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="text-left">
+                <h3>Welcome {{name}}</h3>
+                <hr>
+                <p>Your email is: {{category}}</p>
+                <p>Description: {{description}}</p>
+            </div>
+        </div>
+        {{!-- <div class="col-12 d-flex justify-content-center ">
+            <a href="/calendar/edit-event/{{_id}}" class="btn btn-outline-dark btn-floating m-1">Edit event</a>
+        </div> --}}
 </div>
 
