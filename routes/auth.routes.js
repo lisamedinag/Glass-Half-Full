@@ -67,6 +67,8 @@ router.post('/login', (req, res) => {
 
             // Add the user object to the req.session
             req.session.currentUser = user
+            req.app.locals.currentUserId = user._id
+            req.app.locals.isLogged = true;
             res.redirect('/')
         })
         .catch(err => console.log(err))
@@ -75,6 +77,8 @@ router.post('/login', (req, res) => {
 
 // Log out
 router.get('/logout', (req, res) => {
+    req.app.locals.currentUserId = undefined
+    req.app.locals.isLogged = false
     req.session.destroy(() => res.redirect('/'))
 })
 

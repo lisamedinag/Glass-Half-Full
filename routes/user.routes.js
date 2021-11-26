@@ -30,7 +30,7 @@ router.get("/edit/:user_id", isLoggedIn, checkRoles('USER', 'MOD', 'ADMIN'), (re
             user,
             isAdmin: isAdmin(req.session.currentUser),
         }))
-        .catch(err => console.err(err))
+        .catch(err => console.error(err))
 });
 
 

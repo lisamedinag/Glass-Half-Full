@@ -32,17 +32,20 @@
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/signup">Signup</a>
+              <a class="nav-link" href="profile/{{currentUserId}}">Profile</a>
             </li>
+            {{#unless isLogged}}
             <li class="nav-item">
-              <a class="nav-link" href="profile/{{_id}}">Profile</a>
+              <a class="nav-link" href="/signup">Signup</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
             </li>
+            {{else}}
             <li class="nav-item">
               <a class="nav-link" href="/logout">Logout</a>
             </li>
+            {{/unless}}
           </ul>
         </div>
       </div>

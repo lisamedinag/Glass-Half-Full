@@ -1,66 +1,35 @@
-{{!-- <h1>Welcome {{loggedUser.name}}</h1>
-<hr>
-
-<form action="/profile/edit/{{user._id}}" method="POST">
-
-    <label for="">
-        Name: <input name="name" value="{{user.name}}" type="text">
-    </label>
-    </br>
-
-    <label for="">
-        Username: <input name="username" value="{{user.username}}" type="text">
-    </label>
-    </br>
-
-    <label for="">
-        Description: <input name="description" value="{{user.description}}" type="text">
-    </label>
-    </br>
-
-    {{#if isAdmin}}
-    <label for="">
-        Role: <input name="role" value="{{user.role}}" type="text">
-    </label>
-    {{/if}}
-
-    <button type="submit">Save</button>
-</form>
-
-{{#if isAdmin}}
-<div>
-    <div class="col-12">
-        <br>
-        <a href="profile/delete/{{user._id}}" class="btn btn-danger">Delete</a>
-    </div>
-</div>
-{{/if}} --}}
-
-
-<div class="container align-items-center event">
+<div class="container event">
     <div class="row">
-        <div class="col-12 d-flex justify-content-center align-items-center">
-            <div class="text-center">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="text-left">
             <h1>Welcome {{loggedUser.name}}</h1>
 <hr>
 
 <form action="/profile/edit/{{user._id}}" method="POST">
 
     <label for="">
-        Name: <input name="name" value="{{user.name}}" type="text">
+        Name: 
+        <br> 
+        <input name="name" value="{{user.name}}" type="text">
     </label>
     </br>
     <br>
 
     <label for="">
-        Username: <input name="username" value="{{user.username}}" type="text">
+        Username: 
+        <br>
+        <input name="username" value="{{user.username}}" type="text">
     </label>
     </br>
+    <br>
 
     <label for="">
-        Description: <input name="description" value="{{user.description}}" type="text">
+        Description: 
+        <br>
+        <input name="description" value="{{user.description}}" type="text">
     </label>
     </br>
+    <br>
 
     {{#if isAdmin}}
     <label for="">
