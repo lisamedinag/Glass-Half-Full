@@ -17,7 +17,7 @@ router.get("/:day_id/all-events", (req, res) => {
     Event.find({ date: day_id, isOwner: req.session.currentUser._id })
         .then(allEvents => {
 
-            res.render("calendar/all-events", { events: allEvents, day_id })
+            res.render("calendar/all-events", { events: allEvents, day_id})
         })
         .catch(err => console.log(err))
 });

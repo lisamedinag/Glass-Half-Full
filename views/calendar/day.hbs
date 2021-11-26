@@ -8,49 +8,47 @@
 
         <div class="col-12  d-flex card text-center ">
             <div>
-                <blockquote><em>{{quote.q}}</em></blockquote>
+                <blockquote><q>{{quote.q}}</q></blockquote>
                 <blockquote><em>{{quote.a}}</em></blockquote>
             </div>
         </div>
 
-        {{!-- <div class="row "> --}}
-            {{!-- TODO set height of this col to same height as image (when retouched) --}}
-            <div class="col-12 col-md-6 d-flex card text-center card-img-top">
+        <div class="relative  d-flex card text-center justify-content-center">
+            <div class="col-12 col-md-6 d-flex align-bottom card text-center card-img-top color-events">
 
-                <div class="work eventbars" style="background-color:red"></div>
+                <div class="work eventbars" style="background-color:#32cacd"></div>
 
-                <div class="study eventbars" style="background-color:blue"></div>
+                <div class="study eventbars" style="background-color:#ffb6ad"></div>
 
-                <div class="sport eventbars" style="background-color:orange"></div>
+                <div class="sport eventbars" style="background-color:#ffff9f"></div>
 
-                <div class="self-care eventbars" style="background-color:black"></div>
+                <div class="self-care eventbars" style="background-color:#cda0cb"></div>
 
-                <div class="social eventbars" style="background-color:purple"></div>
+                <div class="social eventbars" style="background-color:#fe7968"></div>
 
-                <div class="relax eventbars" style="background-color:green"></div>
+                <div class="relax eventbars" style="background-color:#84e98d"></div>
 
             </div>
 
             <div class="col-12 col-md-6 card-img-top">
                 <a href="/calendar/{{day_id}}/all-events"><img src="/images/day-glass.png"></a>
             </div>
-            {{!--
-        </div> --}}
+        </div>
 
 
-        <div class="col-12 col-md-6 d-flex card text-center ">
+        {{!-- <div class="col-12 col-md-6 d-flex card text-center ">
             <div class="card-list">
                 <h3>All my events:</h3>
                 {{#each events}}
                 <a href="/calendar/event/{{_id}}">{{this.name}}</a>
                 {{/each}}
             </div>
-        </div>
+        </div>--}}
 
-        <div class="col-12 d-flex justify-content-center ">
-            <a href="/calendar/new-event/{{day_id}}" class="btn btn-outline-dark bg-dark btn-floating m-1 text-light"
+        <div class="col-12 d-flex justify-content-center" style="margin-top: 10px;">
+            <a href="/calendar/new-event/{{day_id}}" class="add-event btn btn-outline-dark bg-dark btn-floating m-1 text-light"
                 style="font-size: 60px; width: 100px">+</a>
-        </div>
+        </div> 
     </div>
 </div>
 <input hidden value="{{day_id}}" id="day-id">
